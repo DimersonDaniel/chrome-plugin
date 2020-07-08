@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2, 
+    "name": "Pesquisar",
+    "description": "Build an Extension!",
+    "version": "0.1",
+ "browser_action": {
+    "default_title": "By Dimerson Martins",
+    "default_popup": "index.html"
+},
+"background": {
+    "scripts": ["main.js"]
+},
+"permissions": [ 
+    "webRequest", 
+    "webRequestBlocking", 
+    "<all_urls>", 
+    "storage",
+    "contextMenus", 
+    "tabs"
+],
+"content_scripts":[
+    {
+        "matches": ["http://localhost/phpmyadmin/"],
+        "css": ["style.css"],
+        "js": ["main.js"] 
+    }]
+}
